@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Shop · Goose Barnacle</title>
+<meta name="description" content="Everything under the Goose Barnacle and GBFC labels, 33 pieces, plus the 27 brands on the shelf at 91 Atlantic Avenue, Brooklyn Heights.">
+<meta property="og:title" content="The Shop · Goose Barnacle">
+<meta property="og:description" content="33 pieces under our own label. 27 brands on the shelf. 91 Atlantic Avenue, Brooklyn.">
+<meta property="og:image" content="../images/oxford-blue.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F4EDE0">
+<link rel="icon" href="../images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&family=Work+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4EDE0;
+    --ink:#262014;
+    --soft:#75695A;
+    --line:rgba(38,32,20,.16);
+    --line-strong:rgba(38,32,20,.4);
+    --accent:#FF5910;        /* their wordmark orange, sampled from the primary logo */
+    --accent-deep:#B54710;   /* same orange, held down for small text */
+    --slab:'Rokkitt', 'Rockwell', 'Courier New', serif;
+    --body:'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+    --mono:'Spline Sans Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+    --pad:clamp(20px, 4vw, 56px);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{overflow-x:hidden}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16.5px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit;text-decoration:none}
+  section{scroll-margin-top:24px}
+  .wrap{max-width:1320px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  .mono{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+  .soft{color:var(--soft)}
+
+  .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:8px 14px;font-family:var(--mono);font-size:12px;z-index:50}
+  .skip:focus{left:8px;top:8px}
+
+  /* ---------- masthead ---------- */
+  header{border-bottom:1px solid var(--line)}
+  .mast{display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding-top:18px;padding-bottom:16px;flex-wrap:wrap}
+  .mast .name{font-family:var(--slab);font-weight:600;font-size:clamp(19px,2vw,23px);letter-spacing:.02em;white-space:nowrap}
+  nav{display:flex;gap:clamp(14px,2.4vw,30px);align-items:baseline;flex-wrap:wrap}
+  nav a{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);border-bottom:1px solid transparent;padding-bottom:2px}
+  nav a:hover,nav a:focus-visible{color:var(--ink);border-bottom-color:var(--line-strong)}
+  nav a.shop{color:var(--accent-deep);border-bottom-color:var(--accent-deep)}
+  nav a.shop:hover,nav a.shop:focus-visible{color:var(--accent);border-bottom-color:var(--accent)}
+
+  /* ---------- page head ---------- */
+  .shophead{padding-top:clamp(36px,5vw,80px);padding-bottom:clamp(26px,3vw,44px)}
+  .shophead h1{font-family:var(--slab);font-weight:600;font-size:clamp(36px,4.6vw,66px);line-height:1.04;letter-spacing:-.005em;margin:16px 0 18px;text-wrap:balance;max-width:16ch}
+  .shophead .intro{max-width:52ch;color:var(--soft);font-style:italic}
+  .shophead .facts{margin-top:18px}
+
+  /* ---------- filters ---------- */
+  .filters{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:12px 0;display:flex;align-items:baseline;gap:clamp(12px,2vw,26px);flex-wrap:wrap}
+  .filters .fset{display:flex;gap:clamp(10px,1.6vw,22px);flex-wrap:wrap}
+  .filters button{
+    all:unset;cursor:pointer;
+    font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--soft);border-bottom:1px solid transparent;padding-bottom:2px;
+  }
+  .filters button .n{font-size:9px;color:var(--soft);margin-left:4px}
+  .filters button:hover,.filters button:focus-visible{color:var(--ink);border-bottom-color:var(--line-strong)}
+  .filters button:focus-visible{outline:1px solid var(--line-strong);outline-offset:3px}
+  .filters button[aria-pressed="true"]{color:var(--accent-deep);border-bottom-color:var(--accent-deep)}
+  .filters .showing{margin-left:auto;white-space:nowrap}
+
+  /* ---------- the label grid ---------- */
+  #label{padding-top:clamp(24px,3vw,40px);padding-bottom:clamp(40px,5vw,72px)}
+  .grid{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(16px,2.2vw,30px) clamp(14px,2vw,26px)}
+  .grid li.off{display:none}
+  .grid figure{margin:0}
+  .grid .ph{aspect-ratio:4/5;overflow:hidden;background:#E9E0CE}
+  .grid img{width:100%;height:100%;object-fit:cover}
+  .grid a{display:block}
+  .grid a:focus-visible{outline:1px solid var(--line-strong);outline-offset:3px}
+  .grid figcaption{margin-top:9px;display:flex;align-items:baseline;gap:8px}
+  .grid .no{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--soft);transform:translateY(-1px)}
+  .grid .pname{font-family:var(--slab);font-weight:500;font-size:16px;line-height:1.2}
+  .grid .dots{flex:1;border-bottom:1px dotted var(--line-strong);transform:translateY(-4px);min-width:14px}
+  .grid .pprice{font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+  .grid a:hover .pname,.grid a:focus-visible .pname{color:var(--accent-deep)}
+
+  /* ---------- the rest of the shelf ---------- */
+  .shelf{margin-top:clamp(36px,5vw,64px)}
+  .shelf .rowhead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+  .pricelist{list-style:none;border-top:1px solid var(--line-strong);columns:2;column-gap:clamp(28px,4vw,64px)}
+  .pricelist li{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding:12px 0;break-inside:avoid}
+  .pricelist li.off{display:none}
+  .pricelist .no{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--soft);min-width:2.4ch;transform:translateY(-2px)}
+  .pricelist .item{font-family:var(--slab);font-weight:500;font-size:clamp(17px,1.5vw,21px);line-height:1.2}
+  .pricelist .dots{flex:1;border-bottom:1px dotted var(--line-strong);transform:translateY(-5px);min-width:14px}
+  .pricelist .price{font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+  .pricelist a:hover .item,.pricelist a:focus-visible .item{color:var(--accent-deep)}
+  .pricelist a{display:flex;align-items:baseline;gap:12px;width:100%}
+  .shelffoot{margin-top:16px}
+
+  /* ---------- editorial break ---------- */
+  #fw25{border-top:1px solid var(--line);padding-top:clamp(30px,4vw,52px);padding-bottom:clamp(40px,5vw,80px)}
+  .break{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4.5vw,76px);align-items:center}
+  .break figure{margin:0}
+  .break .ph{aspect-ratio:4/5;overflow:hidden}
+  .break img{width:100%;height:100%;object-fit:cover}
+  .break figcaption{margin-top:9px}
+  .break .pull{font-family:var(--slab);font-weight:500;font-size:clamp(24px,2.8vw,38px);line-height:1.22;max-width:20ch;text-wrap:balance}
+  .break .lookline{display:inline-block;margin-top:22px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--line-strong);padding-bottom:3px}
+  .break .lookline:hover,.break .lookline:focus-visible{border-bottom-color:var(--ink)}
+
+  /* ---------- in store brands ---------- */
+  #brands{border-top:1px solid var(--line);padding-top:clamp(30px,4vw,52px);padding-bottom:clamp(44px,5vw,84px)}
+  .wallhead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+  .wallhead .intro{font-size:15.5px;color:var(--soft);max-width:52ch;font-style:italic}
+  #brands h2.big{font-family:var(--slab);font-weight:600;font-size:clamp(28px,3vw,44px);line-height:1.08;margin:12px 0 22px;max-width:22ch}
+  .bindex{list-style:none;columns:3;column-gap:clamp(24px,3vw,52px);border-top:1px solid var(--line-strong)}
+  .bindex li{break-inside:avoid;border-bottom:1px solid var(--line);display:flex;align-items:baseline;gap:12px;padding:10px 0 11px}
+  .bindex .no{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--soft);min-width:2.4ch;transform:translateY(-2px)}
+  .bindex .bname{font-family:var(--slab);font-weight:500;font-size:clamp(18px,1.55vw,23px);line-height:1.15}
+  .bindex .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-left:auto;white-space:nowrap}
+  .wallfoot{margin-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .wallfoot a{border-bottom:1px solid var(--line-strong);padding-bottom:2px}
+  .wallfoot a:hover,.wallfoot a:focus-visible{border-bottom-color:var(--ink)}
+
+  /* ---------- credo ---------- */
+  .credo{border-top:1px solid var(--line);padding-top:clamp(40px,5vw,72px);padding-bottom:clamp(44px,5vw,80px);text-align:center}
+  .credo p.lo{font-family:var(--slab);font-weight:500;font-size:clamp(22px,2.6vw,34px);line-height:1.3;text-wrap:balance;font-style:italic}
+  .credo .from{margin-top:14px}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line);padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(40px,5vw,64px);text-align:center}
+  footer .wordmark{width:min(300px,64vw);margin:0 auto 22px}
+  footer .fl{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+  footer a{border-bottom:1px solid transparent;padding-bottom:2px}
+  footer a:hover,footer a:focus-visible{border-bottom-color:var(--line-strong)}
+  footer .credit{margin-top:18px;color:var(--soft)}
+
+  /* ---------- 375 first-class ---------- */
+  @media (max-width:900px){
+    body{font-size:16px}
+    .mast{padding-top:14px;padding-bottom:12px}
+    .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .pricelist{columns:1}
+    .break{grid-template-columns:1fr;gap:26px}
+    .break figure{max-width:440px}
+    .bindex{columns:2}
+  }
+  @media (max-width:560px){
+    nav{gap:14px}
+    .shophead h1{font-size:clamp(32px,9.5vw,40px)}
+    .filters .showing{margin-left:0;width:100%}
+    .grid{gap:22px 12px}
+    .grid figcaption{display:block}
+    .grid .no{display:none}
+    .grid .dots{display:none}
+    .grid .pname{display:block;font-size:15px}
+    .grid .pprice{display:block;margin-top:2px;color:var(--soft)}
+    .bindex{columns:1}
+    .bindex .bname{font-size:19px}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{transition-duration:.01ms !important}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#label">Skip to the catalogue</a>
+
+<header>
+  <div class="wrap mast">
+    <a class="name" href="../variant-a/">GOOSE BARNACLE</a>
+    <nav aria-label="Main">
+      <a href="../variant-a/">Home</a>
+      <a href="#label">Our Label</a>
+      <a href="#brands">In Store Brands</a>
+      <a href="../variant-a/#visit">Visit</a>
+      <a class="shop" href="#label" aria-current="page">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="wrap shophead">
+    <p class="mono soft">The Shop · Est. 2010</p>
+    <h1>Everything under our own label.</h1>
+    <p class="intro">Here, you will discover Goose Barnacle's originals alongside a rotating, curated selection of worldwide brands.</p>
+    <p class="facts mono soft">33 pieces · GB &amp; GBFC · Shipping or pickup at 91 Atlantic Avenue</p>
+  </section>
+
+  <div class="wrap">
+    <div class="filters" role="group" aria-label="Filter the catalogue">
+      <div class="fset">
+        <button type="button" data-f="all" aria-pressed="true">All<span class="n">33</span></button>
+        <button type="button" data-f="gb" aria-pressed="false">GB Label<span class="n">23</span></button>
+        <button type="button" data-f="gbfc" aria-pressed="false">GBFC<span class="n">10</span></button>
+        <button type="button" data-f="shirting" aria-pressed="false">Shirting<span class="n">8</span></button>
+        <button type="button" data-f="objects" aria-pressed="false">Objects<span class="n">4</span></button>
+      </div>
+      <p class="showing mono soft" id="showing" aria-live="polite">Showing 33 of 33 pieces</p>
+    </div>
+  </div>
+
+  <section id="label">
+    <div class="wrap">
+      <ul class="grid" id="grid">
+        <li data-cat="gb shirting"><a href="../product/"><figure>
+          <div class="ph"><img src="../images/oxford-blue-sm.jpg" width="560" height="840" alt="The blue cotton oxford, worn in the shop" fetchpriority="high"></div>
+          <figcaption><span class="no">01</span><span class="pname">Blue Cotton Oxford</span><span class="dots" aria-hidden="true"></span><span class="pprice">$168</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb shirting"><a href="https://www.goosebarnacle.com/product/gb-white-cotton-oxford/209" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/oxford-white.jpg" width="560" height="840" alt="The white cotton oxford, worn with khaki trousers" loading="lazy"></div>
+          <figcaption><span class="no">02</span><span class="pname">White Cotton Oxford</span><span class="dots" aria-hidden="true"></span><span class="pprice">$168</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb shirting"><a href="https://www.goosebarnacle.com/product/gb-navy-cotton-oxford/960" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/oxford-navy.jpg" width="560" height="840" alt="The navy cotton oxford, worn against a stone wall" loading="lazy"></div>
+          <figcaption><span class="no">03</span><span class="pname">Navy Cotton Oxford</span><span class="dots" aria-hidden="true"></span><span class="pprice">$168</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb shirting"><a href="https://www.goosebarnacle.com/product/gb-blue-stripe-cotton-oxford/469" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/oxford-stripe.jpg" width="560" height="746" alt="The blue stripe cotton oxford on a wooden hanger in the shop" loading="lazy"></div>
+          <figcaption><span class="no">04</span><span class="pname">Blue Stripe Cotton Oxford</span><span class="dots" aria-hidden="true"></span><span class="pprice">$168</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb shirting"><a href="https://www.goosebarnacle.com/product/gb-navy-brushed-cotton/301" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/brushed-navy.jpg" width="560" height="746" alt="The navy brushed cotton shirt hanging on the shop's pressed tin wall" loading="lazy"></div>
+          <figcaption><span class="no">05</span><span class="pname">Navy Brushed Cotton</span><span class="dots" aria-hidden="true"></span><span class="pprice">$178</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb shirting"><a href="https://www.goosebarnacle.com/product/gb-white-linen-cotton-short-sleeve/646" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/linen-white.jpg" width="560" height="746" alt="The white linen and cotton short sleeve on a wooden hanger" loading="lazy"></div>
+          <figcaption><span class="no">06</span><span class="pname">White Linen/Cotton S/S</span><span class="dots" aria-hidden="true"></span><span class="pprice">$158</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb"><a href="https://www.goosebarnacle.com/product/gb-blue-italian-denim/194" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/denim-blue.jpg" width="560" height="746" alt="Blue Italian denim folded over a hanger against the pressed tin wall" loading="lazy"></div>
+          <figcaption><span class="no">07</span><span class="pname">Blue Italian Denim</span><span class="dots" aria-hidden="true"></span><span class="pprice">$148</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb"><a href="https://www.goosebarnacle.com/product/gb-black-italian-denim/207" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/denim-black.jpg" width="560" height="746" alt="Black Italian denim folded over a wooden hanger" loading="lazy"></div>
+          <figcaption><span class="no">08</span><span class="pname">Black Italian Denim</span><span class="dots" aria-hidden="true"></span><span class="pprice">$148</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb"><a href="https://www.goosebarnacle.com/product/gb-blue-italian-wool-tie/212" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/tie-blue.jpg" width="560" height="746" alt="The blue Italian wool tie draped over a wooden hanger" loading="lazy"></div>
+          <figcaption><span class="no">09</span><span class="pname">Blue Italian Wool Tie</span><span class="dots" aria-hidden="true"></span><span class="pprice">$58</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb"><a href="https://www.goosebarnacle.com/product/gb-grey-italian-wool-tie/213" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/tie-grey.jpg" width="560" height="746" alt="The grey Italian wool tie draped over a wooden hanger" loading="lazy"></div>
+          <figcaption><span class="no">10</span><span class="pname">Grey Italian Wool Tie</span><span class="dots" aria-hidden="true"></span><span class="pprice">$58</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb"><a href="https://www.goosebarnacle.com/product/gb-brown-club-jacket/1302" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/jacket-brown.jpg" width="560" height="840" alt="The brown club jacket, worn in the shop" loading="lazy"></div>
+          <figcaption><span class="no">11</span><span class="pname">Brown Club Jacket</span><span class="dots" aria-hidden="true"></span><span class="pprice">$258</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb"><a href="https://www.goosebarnacle.com/product/gb-blue-club-jacket/758" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/jacket-blue.jpg" width="560" height="746" alt="The blue club jacket on a wooden hanger" loading="lazy"></div>
+          <figcaption><span class="no">12</span><span class="pname">Blue Club Jacket</span><span class="dots" aria-hidden="true"></span><span class="pprice">$258</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb"><a href="https://www.goosebarnacle.com/product/gb-pier-postcard-tee/PC3NLVAQZ6BRTEWYO2UG46BX" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/tee-pier.jpg" width="560" height="700" alt="The Pier Postcard tee laid on the rocks by the water" loading="lazy"></div>
+          <figcaption><span class="no">13</span><span class="pname">Pier Postcard Tee</span><span class="dots" aria-hidden="true"></span><span class="pprice">$97</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb"><a href="https://www.goosebarnacle.com/product/gb-torre-postcard-tee/1162" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/tee-torre.jpg" width="560" height="700" alt="The Torre Postcard tee laid on the rocks" loading="lazy"></div>
+          <figcaption><span class="no">14</span><span class="pname">Torre Postcard Tee</span><span class="dots" aria-hidden="true"></span><span class="pprice">$97</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb"><a href="https://www.goosebarnacle.com/product/gb-olive-burn-club-cap/TEY5O4PQJ4WQ4XY2MYXPBJWD" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/cap-olive-burn.jpg" width="560" height="700" alt="The olive Burn Club cap, worn outside the shop" loading="lazy"></div>
+          <figcaption><span class="no">15</span><span class="pname">Olive Burn Club Cap</span><span class="dots" aria-hidden="true"></span><span class="pprice">$50</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb"><a href="https://www.goosebarnacle.com/product/gb-rasta-burn-club-cap/NXWGOXD2ZPOTVCNXD5PE2W5L" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/cap-rasta-burn.jpg" width="560" height="700" alt="The rasta Burn Club cap, worn" loading="lazy"></div>
+          <figcaption><span class="no">16</span><span class="pname">Rasta Burn Club Cap</span><span class="dots" aria-hidden="true"></span><span class="pprice">$50</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb objects"><a href="https://www.goosebarnacle.com/product/gb-a-coru-a-candle/210" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/candle-coruna.jpg" width="560" height="700" alt="The A Coruña candle in its blue glass jar" loading="lazy"></div>
+          <figcaption><span class="no">17</span><span class="pname">A Coruña Candle</span><span class="dots" aria-hidden="true"></span><span class="pprice">$48</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gb objects"><a href="https://www.goosebarnacle.com/product/gb-santiago-candle/211" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/candle-santiago.jpg" width="560" height="700" alt="The Santiago candle in its blue glass jar" loading="lazy"></div>
+          <figcaption><span class="no">18</span><span class="pname">Santiago Candle</span><span class="dots" aria-hidden="true"></span><span class="pprice">$48</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gbfc"><a href="https://www.goosebarnacle.com/product/gbfc-supporter-scarf/QZWXGZAPYQ6RRU6BLTEMCFKF" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/scarf-supporter.jpg" width="560" height="700" alt="The GBFC supporter scarf worn over a leather jacket" loading="lazy"></div>
+          <figcaption><span class="no">19</span><span class="pname">GBFC Supporter Scarf</span><span class="dots" aria-hidden="true"></span><span class="pprice">$45</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gbfc"><a href="https://www.goosebarnacle.com/product/gbfc-jersey-s-s/582" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/jersey-ss.jpg" width="560" height="746" alt="The GBFC short sleeve jersey on a hanger in the shop" loading="lazy"></div>
+          <figcaption><span class="no">20</span><span class="pname">GBFC Jersey S/S</span><span class="dots" aria-hidden="true"></span><span class="pprice">$138</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gbfc"><a href="https://www.goosebarnacle.com/product/gbfc-jersey-l-s/583" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/jersey-ls.jpg" width="560" height="746" alt="The GBFC long sleeve jersey on a hanger" loading="lazy"></div>
+          <figcaption><span class="no">21</span><span class="pname">GBFC Jersey L/S</span><span class="dots" aria-hidden="true"></span><span class="pprice">$138</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gbfc"><a href="https://www.goosebarnacle.com/product/gbfc-royal-sweatshirt/586" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/sweat-royal.jpg" width="560" height="746" alt="The royal GBFC sweatshirt on a hanger" loading="lazy"></div>
+          <figcaption><span class="no">22</span><span class="pname">GBFC Royal Sweatshirt</span><span class="dots" aria-hidden="true"></span><span class="pprice">$118</span></figcaption>
+        </figure></a></li>
+        <li data-cat="gbfc"><a href="https://www.goosebarnacle.com/product/gbfc-orange-sweatshirt/584" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/sweat-orange.jpg" width="560" height="746" alt="The orange GBFC sweatshirt on a hanger" loading="lazy"></div>
+          <figcaption><span class="no">23</span><span class="pname">GBFC Orange Sweatshirt</span><span class="dots" aria-hidden="true"></span><span class="pprice">$118</span></figcaption>
+        </figure></a></li>
+      </ul>
+
+      <div class="shelf">
+        <div class="rowhead">
+          <h2 class="mono" style="font-weight:400">The rest of the shelf · Nos. 24 to 33</h2>
+          <p class="mono soft">Every piece below is in the catalog today</p>
+        </div>
+        <ul class="pricelist" id="shelf">
+          <li data-cat="gb shirting"><a href="https://www.goosebarnacle.com/product/gb-blue-brushed-cotton/299" target="_blank" rel="noopener"><span class="no">24</span><span class="item">Blue Brushed Cotton</span><span class="dots" aria-hidden="true"></span><span class="price">$178</span></a></li>
+          <li data-cat="gb shirting"><a href="https://www.goosebarnacle.com/product/gb-blue-linen-cotton-short-sleeve/647" target="_blank" rel="noopener"><span class="no">25</span><span class="item">Blue Linen/Cotton S/S</span><span class="dots" aria-hidden="true"></span><span class="price">$158</span></a></li>
+          <li data-cat="gb"><a href="https://www.goosebarnacle.com/product/gb-charcoal-italian-wool-tie/214" target="_blank" rel="noopener"><span class="no">26</span><span class="item">Charcoal Italian Wool Tie</span><span class="dots" aria-hidden="true"></span><span class="price">$58</span></a></li>
+          <li data-cat="gb objects"><a href="https://www.goosebarnacle.com/product/gb-aquamarine-square-hug-earring/282" target="_blank" rel="noopener"><span class="no">27</span><span class="item">Aquamarine Square Hug Earring</span><span class="dots" aria-hidden="true"></span><span class="price">$350</span></a></li>
+          <li data-cat="gb objects"><a href="https://www.goosebarnacle.com/product/gb-sapphire-square-hug-earring/281" target="_blank" rel="noopener"><span class="no">28</span><span class="item">Sapphire Square Hug Earring</span><span class="dots" aria-hidden="true"></span><span class="price">$420</span></a></li>
+          <li data-cat="gbfc"><a href="https://www.goosebarnacle.com/product/gbfc-beanie/655" target="_blank" rel="noopener"><span class="no">29</span><span class="item">GBFC Beanie</span><span class="dots" aria-hidden="true"></span><span class="price">$40</span></a></li>
+          <li data-cat="gbfc"><a href="https://www.goosebarnacle.com/product/gbfc-green-sweatshirt/587" target="_blank" rel="noopener"><span class="no">30</span><span class="item">GBFC Green Sweatshirt</span><span class="dots" aria-hidden="true"></span><span class="price">$118</span></a></li>
+          <li data-cat="gbfc"><a href="https://www.goosebarnacle.com/product/gbfc-navy-sweatshirt/585" target="_blank" rel="noopener"><span class="no">31</span><span class="item">GBFC Navy Sweatshirt</span><span class="dots" aria-hidden="true"></span><span class="price">$118</span></a></li>
+          <li data-cat="gbfc"><a href="https://www.goosebarnacle.com/product/gbfc-royal-shorts/589" target="_blank" rel="noopener"><span class="no">32</span><span class="item">GBFC Royal Shorts</span><span class="dots" aria-hidden="true"></span><span class="price">$68</span></a></li>
+          <li data-cat="gbfc"><a href="https://www.goosebarnacle.com/product/gbfc-shoe-bag/590" target="_blank" rel="noopener"><span class="no">33</span><span class="item">GBFC Shoe Bag</span><span class="dots" aria-hidden="true"></span><span class="price">$68</span></a></li>
+        </ul>
+        <p class="shelffoot mono soft">Sizes run S to XXL on shirting. GBFC runs small, we recommend sizing up.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="fw25">
+    <div class="wrap break">
+      <figure>
+        <div class="ph"><img src="../images/editorial-fw25.jpg" width="790" height="1000" alt="From the FW25 lookbook, a faded blue sweatshirt and patterned scarf against the brick" loading="lazy"></div>
+        <figcaption class="mono soft">From the shop's FW25 lookbook</figcaption>
+      </figure>
+      <div>
+        <p class="mono soft">FW25</p>
+        <p class="pull">Shot for FW25, on the block and down by the water.</p>
+        <a class="lookline" href="https://www.goosebarnacle.com/lookbook" target="_blank" rel="noopener">See the full lookbook</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="brands">
+    <div class="wrap">
+      <div class="wallhead">
+        <p class="mono">In Store Brands · 27</p>
+        <p class="intro">Sold at the counter, not from a cart. Call ahead and we will hold a piece.</p>
+      </div>
+      <h2 class="big">The rest of the shop hangs on the rail.</h2>
+      <ul class="bindex">
+        <li><span class="no">01</span><span class="bname">Armor-Lux</span><span class="tag">in store</span></li>
+        <li><span class="no">02</span><span class="bname">Arnette</span><span class="tag">in store</span></li>
+        <li><span class="no">03</span><span class="bname">Barbour</span><span class="tag">in store</span></li>
+        <li><span class="no">04</span><span class="bname">Camo</span><span class="tag">in store</span></li>
+        <li><span class="no">05</span><span class="bname">Casio / G-Shock</span><span class="tag">in store</span></li>
+        <li><span class="no">06</span><span class="bname">Castart</span><span class="tag">in store</span></li>
+        <li><span class="no">07</span><span class="bname">C.P. Company</span><span class="tag">in store</span></li>
+        <li><span class="no">08</span><span class="bname">Drake's</span><span class="tag">in store</span></li>
+        <li><span class="no">09</span><span class="bname">Edmmond</span><span class="tag">in store</span></li>
+        <li><span class="no">10</span><span class="bname">Foret</span><span class="tag">in store</span></li>
+        <li><span class="no">11</span><span class="bname">Goose Barnacle</span><span class="tag">also online</span></li>
+        <li><span class="no">12</span><span class="bname">Handvaerk</span><span class="tag">in store</span></li>
+        <li><span class="no">13</span><span class="bname">Harris Wharf</span><span class="tag">in store</span></li>
+        <li><span class="no">14</span><span class="bname">Henrik Vibskov</span><span class="tag">in store</span></li>
+        <li><span class="no">15</span><span class="bname">Ina Seifart</span><span class="tag">in store</span></li>
+        <li><span class="no">16</span><span class="bname">Kardo</span><span class="tag">in store</span></li>
+        <li><span class="no">17</span><span class="bname">La Paz</span><span class="tag">in store</span></li>
+        <li><span class="no">18</span><span class="bname">Les Deux</span><span class="tag">in store</span></li>
+        <li><span class="no">19</span><span class="bname">Makr</span><span class="tag">in store</span></li>
+        <li><span class="no">20</span><span class="bname">Malin+Goetz</span><span class="tag">in store</span></li>
+        <li><span class="no">21</span><span class="bname">Maximum Henry</span><span class="tag">in store</span></li>
+        <li><span class="no">22</span><span class="bname">Monostereo</span><span class="tag">in store</span></li>
+        <li><span class="no">23</span><span class="bname">Persol</span><span class="tag">in store</span></li>
+        <li><span class="no">24</span><span class="bname">Pockies</span><span class="tag">in store</span></li>
+        <li><span class="no">25</span><span class="bname">Umbro</span><span class="tag">in store</span></li>
+        <li><span class="no">26</span><span class="bname">Unfeigned</span><span class="tag">in store</span></li>
+        <li><span class="no">27</span><span class="bname">Universal Works</span><span class="tag">in store</span></li>
+      </ul>
+      <div class="wallfoot">
+        <p class="mono soft">91 Atlantic Avenue, Brooklyn · <a href="tel:+17188552694">(718) 855-2694</a></p>
+        <a class="mono" href="../variant-a/#brands">See the brand wall</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="credo">
+    <div class="wrap">
+      <p class="lo">"El club donde nadie es forastero."</p>
+      <p class="from mono soft">The club where no one is a stranger · From the GBFC supporter scarf</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="wordmark" src="../images/wordmark.png" width="720" height="317" alt="Goose Barnacle" loading="lazy">
+    <div class="fl mono soft">
+      <span>91 Atlantic Avenue, Brooklyn</span>
+      <span>·</span>
+      <a href="tel:+17188552694">(718) 855-2694</a>
+      <span>·</span>
+      <a href="https://www.instagram.com/goosebarnacle" target="_blank" rel="noopener">@goosebarnacle</a>
+    </div>
+    <p class="credit mono">A Brooklyn Heights Neighborhood Shop · Photography: Goose Barnacle</p>
+  </div>
+</footer>
+
+<script>
+  // The filters: instant, no animation, all 33 pieces carry real category data.
+  (function(){
+    var buttons = document.querySelectorAll('.filters button');
+    var items = document.querySelectorAll('#grid > li, #shelf > li');
+    var showing = document.getElementById('showing');
+    buttons.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        buttons.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+        var f = btn.getAttribute('data-f');
+        var n = 0;
+        items.forEach(function(it){
+          var hit = (f === 'all') || (' ' + it.getAttribute('data-cat') + ' ').indexOf(' ' + f + ' ') > -1;
+          it.classList.toggle('off', !hit);
+          if(hit) n++;
+        });
+        showing.textContent = 'Showing ' + n + ' of 33 pieces';
+      });
+    });
+  })();
+</script>
+</body>
+</html>

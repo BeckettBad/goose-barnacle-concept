@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Goose Barnacle · The Brooklyn Heights Community Shop</title>
+<meta name="description" content="Established in 2010, Goose Barnacle is a menswear boutique at 91 Atlantic Avenue, Brooklyn Heights, run by husband and wife team David Alperin and Michelle Lorenzutti.">
+<meta property="og:title" content="Goose Barnacle · The Brooklyn Heights Community Shop">
+<meta property="og:description" content="Established in 2010. 91 Atlantic Avenue, Brooklyn. Lo tiene todo.">
+<meta property="og:image" content="images/hero-exterior.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F4EDE0">
+<link rel="icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&family=Work+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4EDE0;
+    --ink:#262014;
+    --soft:#75695A;
+    --line:rgba(38,32,20,.16);
+    --line-strong:rgba(38,32,20,.4);
+    --accent:#FF5910;        /* their wordmark orange, sampled from the primary logo */
+    --accent-deep:#B54710;   /* same orange, held down for small text */
+    --slab:'Rokkitt', 'Rockwell', 'Courier New', serif;
+    --body:'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+    --mono:'Spline Sans Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+    --pad:clamp(20px, 4vw, 56px);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{overflow-x:hidden}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16.5px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit;text-decoration:none}
+  section{scroll-margin-top:24px}
+  .wrap{max-width:1320px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  .mono{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+  .soft{color:var(--soft)}
+
+  .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:8px 14px;font-family:var(--mono);font-size:12px;z-index:50}
+  .skip:focus{left:8px;top:8px}
+
+  /* ---------- masthead ---------- */
+  header{border-bottom:1px solid var(--line)}
+  .mast{display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding-top:18px;padding-bottom:16px;flex-wrap:wrap}
+  .mast .name{font-family:var(--slab);font-weight:600;font-size:clamp(19px,2vw,23px);letter-spacing:.02em;white-space:nowrap}
+  nav{display:flex;gap:clamp(14px,2.4vw,30px);align-items:baseline;flex-wrap:wrap}
+  nav a{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);border-bottom:1px solid transparent;padding-bottom:2px}
+  nav a:hover,nav a:focus-visible{color:var(--ink);border-bottom-color:var(--line-strong)}
+  nav a.shop{color:var(--accent-deep);border-bottom-color:var(--accent-deep)}
+  nav a.shop:hover,nav a.shop:focus-visible{color:var(--accent);border-bottom-color:var(--accent)}
+
+  /* ---------- hero ---------- */
+  .hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,6fr);gap:clamp(28px,4.5vw,72px);align-items:center;padding-top:clamp(40px,6vw,96px);padding-bottom:clamp(44px,6vw,100px)}
+  .hero h1{font-family:var(--slab);font-weight:600;font-size:clamp(40px,5.4vw,78px);line-height:1.02;letter-spacing:-.005em;margin:18px 0 22px;text-wrap:balance}
+  .hero p{max-width:44ch}
+  .hero .down{display:inline-block;margin-top:26px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--line-strong);padding-bottom:3px}
+  .hero .down:hover,.hero .down:focus-visible{border-bottom-color:var(--ink)}
+  .object{mix-blend-mode:multiply}   /* their postcard and framed pieces sit on the paper like real objects */
+  .hero figure{margin:0}
+  .hero figcaption{margin-top:10px;text-align:center}
+
+  /* ---------- the brand wall (signature) ---------- */
+  #brands{border-top:1px solid var(--line);padding-top:clamp(30px,4vw,52px);padding-bottom:clamp(48px,6vw,96px)}
+  .wallhead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+  .wallhead .intro{font-size:15.5px;color:var(--soft);max-width:52ch;font-style:italic}
+  .wall{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,410px);gap:clamp(28px,4.5vw,76px);align-items:start;margin-top:clamp(18px,2.5vw,34px)}
+  .index{list-style:none;columns:2;column-gap:clamp(24px,3vw,52px)}
+  .index li{break-inside:avoid;border-bottom:1px solid var(--line)}
+  .index button{
+    all:unset;display:flex;align-items:baseline;gap:14px;width:100%;
+    padding:9px 0 10px;cursor:pointer;
+    font-family:var(--slab);font-weight:500;font-size:clamp(19px,1.65vw,25px);line-height:1.15;
+  }
+  .index button .no{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--soft);min-width:2.4ch;transform:translateY(-2px)}
+  .index button .tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-left:auto;white-space:nowrap}
+  .index button:hover,.index button:focus-visible,.index li.on button{color:var(--accent)}
+  .index button:focus-visible{outline:1px solid var(--line-strong);outline-offset:2px}
+  .wallfoot{margin-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .wallfoot a{border-bottom:1px solid var(--line-strong);padding-bottom:2px}
+  .wallfoot a:hover,.wallfoot a:focus-visible{border-bottom-color:var(--ink)}
+
+  .plate{position:sticky;top:18px}
+  .plate .frame{position:relative;aspect-ratio:4/5;overflow:hidden;background:#E9E0CE}
+  .plate .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .28s ease}
+  .plate .frame img.show{opacity:1}
+  .plate figcaption{margin-top:10px;display:flex;justify-content:space-between;gap:12px}
+
+  /* ---------- own label / the counter ---------- */
+  #label{border-top:1px solid var(--line);padding-top:clamp(30px,4vw,52px);padding-bottom:clamp(48px,6vw,96px)}
+  .counter{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4.5vw,76px);align-items:start}
+  .counter h2{font-family:var(--slab);font-weight:600;font-size:clamp(28px,3vw,44px);line-height:1.08;margin:10px 0 14px}
+  .counter .note{color:var(--soft);max-width:46ch;margin-bottom:26px}
+  .pricelist{list-style:none;border-top:1px solid var(--line-strong)}
+  .pricelist li{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--line);padding:13px 0}
+  .pricelist .item{font-family:var(--slab);font-weight:500;font-size:clamp(19px,1.8vw,24px)}
+  .pricelist .dots{flex:1;border-bottom:1px dotted var(--line-strong);transform:translateY(-5px)}
+  .pricelist .price{font-family:var(--mono);font-size:13px;letter-spacing:.06em}
+  .counter .shoplink{display:inline-block;margin-top:24px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--line-strong);padding-bottom:3px}
+  .counter .shoplink:hover,.counter .shoplink:focus-visible{border-bottom-color:var(--ink)}
+  .counter figure{margin:0}
+  .counter figcaption{margin-top:10px}
+  .counter .ph{aspect-ratio:4/5;overflow:hidden}
+  .counter .ph img{width:100%;height:100%;object-fit:cover}
+
+  /* ---------- fw25 row ---------- */
+  #fw25{border-top:1px solid var(--line);padding-top:clamp(28px,3.5vw,46px);padding-bottom:clamp(48px,6vw,96px)}
+  .rowhead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+  .rowhead a{border-bottom:1px solid var(--line-strong);padding-bottom:2px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+  .rowhead a:hover,.rowhead a:focus-visible{border-bottom-color:var(--ink)}
+  .lookrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,28px)}
+  .lookrow figure{margin:0}
+  .lookrow .ph{aspect-ratio:4/5;overflow:hidden}
+  .lookrow img{width:100%;height:100%;object-fit:cover}
+  .lookrow figcaption{margin-top:9px;text-align:center}
+
+  /* ---------- family ---------- */
+  #family{border-top:1px solid var(--line);padding-top:clamp(30px,4vw,52px);padding-bottom:clamp(48px,6vw,96px)}
+  .fam{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(28px,5vw,84px);align-items:center}
+  .fam + .fam{margin-top:clamp(44px,6vw,88px)}
+  .fam h2{font-family:var(--slab);font-weight:600;font-size:clamp(28px,3vw,44px);line-height:1.08;margin:10px 0 16px}
+  .fam p{max-width:46ch}
+  .fam p + p{margin-top:14px}
+  .fam figure{margin:0}
+  .fam figcaption{margin-top:10px;text-align:center}
+  .fam .flip{order:-1}
+  .credo{margin-top:clamp(44px,6vw,80px);text-align:center}
+  .credo p{font-family:var(--slab);font-weight:500;font-size:clamp(22px,2.6vw,34px);line-height:1.3;text-wrap:balance}
+  .credo .lo{font-style:italic}
+
+  /* ---------- visit ---------- */
+  #visit{border-top:1px solid var(--line);padding-top:clamp(30px,4vw,52px);padding-bottom:clamp(52px,6vw,100px)}
+  .visit{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4.5vw,76px);align-items:start}
+  .visit h2{font-family:var(--slab);font-weight:600;font-size:clamp(28px,3vw,44px);line-height:1.08;margin:10px 0 18px}
+  .visit .addr{margin-top:26px}
+  .visit .addr p{margin-top:6px}
+  .visit .addr a{border-bottom:1px solid var(--line-strong)}
+  .visit .gallery-note{margin-top:26px;color:var(--soft);max-width:44ch;font-style:italic}
+  .visit figure{margin:0}
+  .visit figcaption{margin-top:8px;text-align:center}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line);padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(40px,5vw,64px);text-align:center}
+  footer .wordmark{width:min(300px,64vw);margin:0 auto 22px}
+  footer .fl{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+  footer a{border-bottom:1px solid transparent;padding-bottom:2px}
+  footer a:hover,footer a:focus-visible{border-bottom-color:var(--line-strong)}
+  footer .credit{margin-top:18px;color:var(--soft)}
+
+  /* ---------- 375 first-class ---------- */
+  @media (max-width:900px){
+    body{font-size:16px}
+    .mast{padding-top:14px;padding-bottom:12px}
+    .hero{grid-template-columns:1fr;gap:30px;padding-top:34px;padding-bottom:44px}
+    .hero figure{order:-1}
+    .wall{grid-template-columns:1fr;gap:0}
+    /* the plate rides on top while you run a thumb down the shelf */
+    .plate{order:-1;position:sticky;top:0;z-index:5;background:var(--paper);padding-bottom:12px;margin-bottom:10px}
+    .plate .frame{aspect-ratio:16/11}
+    .index{columns:1}
+    .index button{font-size:21px;padding:11px 0 12px}
+    .counter{grid-template-columns:1fr;gap:30px}
+    .counter figure{max-width:420px}
+    .lookrow{grid-template-columns:1fr;gap:26px}
+    .lookrow figure:nth-child(2) .ph,.lookrow figure:nth-child(3) .ph{aspect-ratio:4/5}
+    .fam{grid-template-columns:1fr;gap:24px}
+    .fam .flip{order:0}
+    .visit{grid-template-columns:1fr;gap:34px}
+    .visit figure{max-width:420px}
+  }
+  @media (max-width:560px){
+    nav{gap:14px}
+    .hero h1{font-size:clamp(36px,10.5vw,44px)}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    .plate .frame img{transition:none}
+    *{transition-duration:.01ms !important}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#brands">Skip to the brands</a>
+
+<header>
+  <div class="wrap mast">
+    <a class="name" href="#top">GOOSE BARNACLE</a>
+    <nav aria-label="Main">
+      <a href="#brands">The Brands</a>
+      <a href="#label">Our Label</a>
+      <a href="#family">The Family</a>
+      <a href="#visit">Visit</a>
+      <a class="shop" href="../catalogue/">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="wrap hero">
+    <div>
+      <p class="mono soft">Est. 2010 · 91 Atlantic Avenue</p>
+      <h1>The Brooklyn Heights Community&nbsp;Shop.</h1>
+      <p>Established in 2010, Goose Barnacle is a menswear boutique run by husband and wife team David Alperin and Michelle Lorenzutti.</p>
+      <a class="down" href="#brands">The brands on the shelf ↓</a>
+    </div>
+    <figure>
+      <img class="object" src="images/hero-exterior.jpg" width="1300" height="867" alt="The Goose Barnacle storefront at 91 Atlantic Avenue, printed as a postcard" fetchpriority="high">
+      <figcaption class="mono soft">91 Atlantic Avenue, Brooklyn, New York 11201</figcaption>
+    </figure>
+  </section>
+
+  <section id="brands">
+    <div class="wrap">
+      <div class="wallhead">
+        <h2 class="mono">In Store Brands · 27</h2>
+        <p class="intro">Here, you will discover Goose Barnacle's originals alongside a rotating, curated selection of worldwide brands.</p>
+      </div>
+      <div class="wall">
+        <ul class="index" id="index">
+          <li><button type="button"><span class="no">01</span>Armor-Lux</button></li>
+          <li><button type="button"><span class="no">02</span>Arnette</button></li>
+          <li><button type="button"><span class="no">03</span>Barbour</button></li>
+          <li><button type="button"><span class="no">04</span>Camo</button></li>
+          <li><button type="button"><span class="no">05</span>Casio / G-Shock</button></li>
+          <li><button type="button"><span class="no">06</span>Castart</button></li>
+          <li><button type="button"><span class="no">07</span>C.P. Company</button></li>
+          <li><button type="button"><span class="no">08</span>Drake's</button></li>
+          <li><button type="button"><span class="no">09</span>Edmmond</button></li>
+          <li><button type="button"><span class="no">10</span>Foret</button></li>
+          <li><button type="button"><span class="no">11</span>Goose Barnacle<span class="tag">also online</span></button></li>
+          <li><button type="button"><span class="no">12</span>Handvaerk</button></li>
+          <li><button type="button"><span class="no">13</span>Harris Wharf</button></li>
+          <li><button type="button"><span class="no">14</span>Henrik Vibskov</button></li>
+          <li><button type="button"><span class="no">15</span>Ina Seifart</button></li>
+          <li><button type="button"><span class="no">16</span>Kardo</button></li>
+          <li><button type="button"><span class="no">17</span>La Paz</button></li>
+          <li><button type="button"><span class="no">18</span>Les Deux</button></li>
+          <li><button type="button"><span class="no">19</span>Makr</button></li>
+          <li><button type="button"><span class="no">20</span>Malin+Goetz</button></li>
+          <li><button type="button"><span class="no">21</span>Maximum Henry</button></li>
+          <li><button type="button"><span class="no">22</span>Monostereo</button></li>
+          <li><button type="button"><span class="no">23</span>Persol</button></li>
+          <li><button type="button"><span class="no">24</span>Pockies</button></li>
+          <li><button type="button"><span class="no">25</span>Umbro</button></li>
+          <li><button type="button"><span class="no">26</span>Unfeigned</button></li>
+          <li><button type="button"><span class="no">27</span>Universal Works</button></li>
+        </ul>
+        <figure class="plate">
+          <div class="frame" id="frame">
+            <img src="images/fw25-01.jpg" width="860" height="1075" alt="From the Goose Barnacle FW25 lookbook, photographed against the brick outside the shop" class="show">
+            <img src="images/fw25-07.jpg" width="860" height="1075" alt="" loading="lazy">
+            <img src="images/fw25-11.jpg" width="860" height="1075" alt="" loading="lazy">
+            <img src="images/fw25-02.jpg" width="860" height="1075" alt="" loading="lazy">
+            <img src="images/fw25-16.jpg" width="860" height="1075" alt="" loading="lazy">
+            <img src="images/fw25-09.jpg" width="860" height="1075" alt="" loading="lazy">
+            <img src="images/fw25-04.jpg" width="860" height="1075" alt="" loading="lazy">
+            <img src="images/fw25-18.jpg" width="860" height="1075" alt="" loading="lazy">
+          </div>
+          <figcaption>
+            <span class="mono soft">From the shop's FW25 lookbook</span>
+            <span class="mono soft" id="counterNo">1/8</span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="wallfoot">
+        <p class="mono soft">Every name above hangs in the shop.</p>
+        <a class="mono" href="#label">Shop the shop's own label</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="label">
+    <div class="wrap counter">
+      <figure>
+        <div class="ph"><img src="images/fw25-06.jpg" width="860" height="1075" alt="A Goose Barnacle cap, from the FW25 lookbook" loading="lazy"></div>
+        <figcaption class="mono soft">FW25, photographed for the shop</figcaption>
+      </figure>
+      <div>
+        <p class="mono soft">Goose Barnacle · GBFC</p>
+        <h2>The shop's own label.</h2>
+        <p class="note">Made under the Goose Barnacle name, and under GBFC, the Goose Barnacle Futbol Club, the shop's second badge with a following of its own.</p>
+        <ul class="pricelist">
+          <li><span class="item">GBFC Supporter Scarf</span><span class="dots" aria-hidden="true"></span><span class="price">$45</span></li>
+          <li><span class="item">A Coruña Candle</span><span class="dots" aria-hidden="true"></span><span class="price">$48</span></li>
+          <li><span class="item">Burn Club Cap</span><span class="dots" aria-hidden="true"></span><span class="price">$50</span></li>
+          <li><span class="item">Pier Postcard Tee</span><span class="dots" aria-hidden="true"></span><span class="price">$97</span></li>
+          <li><span class="item">Cotton Oxford</span><span class="dots" aria-hidden="true"></span><span class="price">$168</span></li>
+          <li><span class="item">Brown Club Jacket</span><span class="dots" aria-hidden="true"></span><span class="price">$258</span></li>
+        </ul>
+        <a class="shoplink" href="../catalogue/">See everything under the label · 33 pieces</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="fw25">
+    <div class="wrap">
+      <div class="rowhead">
+        <h2 class="mono">FW25</h2>
+        <a href="https://www.goosebarnacle.com/lookbook" target="_blank" rel="noopener">See the full lookbook</a>
+      </div>
+      <div class="lookrow">
+        <figure>
+          <div class="ph"><img src="images/fw25-02.jpg" width="860" height="1075" alt="FW25 look, long coat and tie against the brick" loading="lazy"></div>
+          <figcaption class="mono soft">FW25 · I</figcaption>
+        </figure>
+        <figure>
+          <div class="ph"><img src="images/fw25-12.jpg" width="860" height="1075" alt="FW25 look, patterned scarf wrapped high" loading="lazy"></div>
+          <figcaption class="mono soft">FW25 · II</figcaption>
+        </figure>
+        <figure>
+          <div class="ph"><img src="images/fw25-13.jpg" width="860" height="1075" alt="FW25 look, orange knit and black watch cap" loading="lazy"></div>
+          <figcaption class="mono soft">FW25 · III</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="family">
+    <div class="wrap">
+      <div class="fam">
+        <figure>
+          <img class="object" src="images/portrait-david-michelle.jpg" width="1000" height="792" alt="David Alperin and Michelle Lorenzutti behind the counter at Goose Barnacle, in a gilded frame" loading="lazy">
+          <figcaption class="mono soft">David and Michelle, at the counter</figcaption>
+        </figure>
+        <div>
+          <p class="mono soft">The Family</p>
+          <h2>Family run, community&nbsp;inspired.</h2>
+          <p>Step through the shop's antique wooden doors and you will find husband and wife team David Alperin and Michelle Lorenzutti welcoming you in with a smile.</p>
+          <p>David opened the store back in 2010, continuing a family legacy of running businesses on Atlantic Avenue.</p>
+        </div>
+      </div>
+      <div class="fam">
+        <div>
+          <p class="mono soft">Brooklyn Roots · La Coruña</p>
+          <h2>A hundred years on Atlantic&nbsp;Avenue.</h2>
+          <p>David's grandmother, Emma Sullivan, immigrated to Brooklyn from La Coruña, Spain in the late 1920's and the family has lived in the Cobble Hill-Brooklyn Heights area ever since.</p>
+          <p>In 1951, Sullivan opened The Long Island Bar, a diner on Atlantic Avenue.</p>
+        </div>
+        <figure class="flip">
+          <img class="object" src="images/framed-long-island-bar.jpg" width="1000" height="833" alt="A framed family photograph from the Long Island Bar years" loading="lazy">
+          <figcaption class="mono soft">The Long Island Bar years, framed in the shop</figcaption>
+        </figure>
+      </div>
+      <div class="credo">
+        <p>Connected by the Atlantic, on Atlantic. <span class="lo">Lo tiene todo.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="visit">
+    <div class="wrap visit">
+      <div>
+        <p class="mono soft">Location</p>
+        <h2>Come by the shop.</h2>
+        <div class="addr">
+          <p class="mono soft">91 Atlantic Avenue, Brooklyn, New York 11201</p>
+          <p class="mono"><a href="tel:+17188552694">(718) 855-2694</a></p>
+          <p class="mono soft">Stop by, or call ahead.</p>
+        </div>
+        <p class="gallery-note">The shop also hangs work by emerging artists, with opening nights through the year.</p>
+      </div>
+      <figure>
+        <img class="object" src="images/postcard-shop-floor.jpg" width="1100" height="1100" alt="The Goose Barnacle shop floor, printed as a vintage postcard" loading="lazy">
+        <figcaption class="mono soft">The shop floor, 91 Atlantic</figcaption>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="wordmark" src="images/wordmark.png" width="720" height="317" alt="Goose Barnacle">
+    <div class="fl mono soft">
+      <span>91 Atlantic Avenue, Brooklyn</span>
+      <span>·</span>
+      <a href="tel:+17188552694">(718) 855-2694</a>
+      <span>·</span>
+      <a href="https://www.instagram.com/goosebarnacle" target="_blank" rel="noopener">@goosebarnacle</a>
+    </div>
+    <p class="credit mono">A Brooklyn Heights Neighborhood Shop · Photography: Goose Barnacle</p>
+  </div>
+</footer>
+
+<script>
+  // The shelf: moving along the brand index leafs through the shop's photography.
+  (function(){
+    var frame = document.getElementById('frame');
+    var imgs = frame.querySelectorAll('img');
+    var counter = document.getElementById('counterNo');
+    var lis = document.querySelectorAll('#index li');
+    var current = 0, last = null;
+    function show(n){
+      if(n === current) return;
+      imgs[current].classList.remove('show');
+      current = n;
+      imgs[current].classList.add('show');
+      counter.textContent = (current+1) + '/' + imgs.length;
+    }
+    lis.forEach(function(li){
+      var fire = function(){
+        if(last === li) return;
+        if(last) last.classList.remove('on');
+        li.classList.add('on');
+        last = li;
+        show((current+1) % imgs.length);
+      };
+      li.addEventListener('pointerenter', fire);
+      li.querySelector('button').addEventListener('focus', fire);
+      li.addEventListener('click', fire);
+    });
+  })();
+</script>
+</body>
+</html>

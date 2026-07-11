@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GB Blue Cotton Oxford · $168 · Goose Barnacle</title>
+<meta name="description" content="Medium weight soft 100% cotton oxford cloth, made and constructed in Portugal. The perfect do everything, go everywhere shirt. Lo tiene todo.">
+<meta property="og:title" content="GB Blue Cotton Oxford · Goose Barnacle">
+<meta property="og:description" content="Medium weight soft 100% cotton oxford cloth, made and constructed in Portugal. $168.">
+<meta property="og:image" content="../images/oxford-blue.jpg">
+<meta property="og:type" content="product">
+<meta name="theme-color" content="#F4EDE0">
+<link rel="icon" href="../images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rokkitt:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&family=Work+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4EDE0;
+    --ink:#262014;
+    --soft:#75695A;
+    --line:rgba(38,32,20,.16);
+    --line-strong:rgba(38,32,20,.4);
+    --accent:#FF5910;        /* their wordmark orange, sampled from the primary logo */
+    --accent-deep:#B54710;   /* same orange, held down for small text */
+    --slab:'Rokkitt', 'Rockwell', 'Courier New', serif;
+    --body:'Work Sans', 'Helvetica Neue', Arial, sans-serif;
+    --mono:'Spline Sans Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+    --pad:clamp(20px, 4vw, 56px);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  html,body{overflow-x:hidden}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:16.5px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit;text-decoration:none}
+  section{scroll-margin-top:24px}
+  .wrap{max-width:1320px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+
+  .mono{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+  .soft{color:var(--soft)}
+
+  .skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:8px 14px;font-family:var(--mono);font-size:12px;z-index:50}
+  .skip:focus{left:8px;top:8px}
+
+  /* ---------- masthead ---------- */
+  header{border-bottom:1px solid var(--line)}
+  .mast{display:flex;align-items:baseline;justify-content:space-between;gap:18px;padding-top:18px;padding-bottom:16px;flex-wrap:wrap}
+  .mast .name{font-family:var(--slab);font-weight:600;font-size:clamp(19px,2vw,23px);letter-spacing:.02em;white-space:nowrap}
+  nav{display:flex;gap:clamp(14px,2.4vw,30px);align-items:baseline;flex-wrap:wrap}
+  nav a{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);border-bottom:1px solid transparent;padding-bottom:2px}
+  nav a:hover,nav a:focus-visible{color:var(--ink);border-bottom-color:var(--line-strong)}
+  nav a.shop{color:var(--accent-deep);border-bottom-color:var(--accent-deep)}
+  nav a.shop:hover,nav a.shop:focus-visible{color:var(--accent);border-bottom-color:var(--accent)}
+
+  /* ---------- crumb ---------- */
+  .crumb{padding-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+  .crumb a{border-bottom:1px solid transparent;padding-bottom:2px}
+  .crumb a:hover,.crumb a:focus-visible{color:var(--ink);border-bottom-color:var(--line-strong)}
+
+  /* ---------- product ---------- */
+  .product{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(28px,4.5vw,76px);align-items:start;padding-top:clamp(20px,2.5vw,36px);padding-bottom:clamp(44px,6vw,90px)}
+  .plates{display:grid;grid-template-columns:1fr;gap:clamp(14px,2vw,26px)}
+  .plates figure{margin:0}
+  .plates .ph{aspect-ratio:4/5;overflow:hidden;background:#E9E0CE}
+  .plates img{width:100%;height:100%;object-fit:cover}
+  .plates figcaption{margin-top:9px;display:flex;justify-content:space-between;gap:12px}
+
+  .pinfo{position:sticky;top:18px}
+  .pinfo h1{font-family:var(--slab);font-weight:600;font-size:clamp(32px,3.4vw,48px);line-height:1.05;margin:12px 0 8px;text-wrap:balance}
+  .priceline{display:flex;align-items:baseline;gap:12px;margin-bottom:22px}
+  .priceline .dots{flex:1;border-bottom:1px dotted var(--line-strong);transform:translateY(-5px)}
+  .priceline .price{font-family:var(--mono);font-size:15px;letter-spacing:.06em}
+
+  .bullets{list-style:none;border-top:1px solid var(--line-strong)}
+  .bullets li{border-bottom:1px solid var(--line);padding:10px 0;font-size:15.5px}
+  .bullets li.lo{font-style:italic}
+
+  .optrow{margin-top:22px}
+  .optrow .lab{display:flex;justify-content:space-between;gap:12px;margin-bottom:10px}
+  .colors{display:flex;gap:10px;flex-wrap:wrap}
+  .colors a,.colors span.here{
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    border:1px solid var(--line);padding:7px 12px;color:var(--soft)
+  }
+  .colors span.here{border-color:var(--ink);color:var(--ink)}
+  .colors a:hover,.colors a:focus-visible{border-color:var(--line-strong);color:var(--ink)}
+
+  .sizes{display:flex;gap:10px;flex-wrap:wrap}
+  .sizes button{
+    all:unset;cursor:pointer;min-width:46px;text-align:center;
+    font-family:var(--mono);font-size:12px;letter-spacing:.08em;
+    border:1px solid var(--line);padding:9px 0;color:var(--ink)
+  }
+  .sizes button:hover,.sizes button:focus-visible{border-color:var(--line-strong)}
+  .sizes button:focus-visible{outline:1px solid var(--line-strong);outline-offset:2px}
+  .sizes button[aria-pressed="true"]{border-color:var(--ink);background:var(--ink);color:var(--paper)}
+
+  .addrow{margin-top:24px}
+  .add{
+    all:unset;cursor:pointer;display:block;text-align:center;width:100%;
+    font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    background:var(--accent);color:#FFF7EC;padding:15px 0;
+  }
+  .add:hover,.add:focus-visible{background:var(--accent-deep)}
+  .add:focus-visible{outline:1px solid var(--ink);outline-offset:2px}
+  .add[data-done="1"]{background:var(--ink);color:var(--paper);cursor:default}
+  .fulfil{margin-top:12px;text-align:center}
+
+  .floor{margin-top:30px;border-top:1px solid var(--line);padding-top:20px}
+  .floor p{font-style:italic;color:var(--soft);max-width:44ch}
+  .floor .who{margin-top:8px;font-style:normal}
+
+  /* ---------- wear it with ---------- */
+  #wear{border-top:1px solid var(--line);padding-top:clamp(28px,3.5vw,46px);padding-bottom:clamp(48px,6vw,96px)}
+  .rowhead{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+  .rowhead a{border-bottom:1px solid var(--line-strong);padding-bottom:2px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+  .rowhead a:hover,.rowhead a:focus-visible{border-bottom-color:var(--ink)}
+  .wearrow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(14px,2vw,28px)}
+  .wearrow figure{margin:0}
+  .wearrow .ph{aspect-ratio:4/5;overflow:hidden;background:#E9E0CE}
+  .wearrow img{width:100%;height:100%;object-fit:cover}
+  .wearrow figcaption{margin-top:9px;display:flex;align-items:baseline;gap:8px}
+  .wearrow .pname{font-family:var(--slab);font-weight:500;font-size:clamp(16px,1.35vw,19px);line-height:1.2}
+  .wearrow .dots{flex:1;border-bottom:1px dotted var(--line-strong);transform:translateY(-4px);min-width:14px}
+  .wearrow .pprice{font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+  .wearrow a:hover .pname,.wearrow a:focus-visible .pname{color:var(--accent-deep)}
+
+  /* ---------- footer ---------- */
+  footer{border-top:1px solid var(--line);padding-top:clamp(40px,5vw,64px);padding-bottom:clamp(40px,5vw,64px);text-align:center}
+  footer .wordmark{width:min(300px,64vw);margin:0 auto 22px}
+  footer .fl{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+  footer a{border-bottom:1px solid transparent;padding-bottom:2px}
+  footer a:hover,footer a:focus-visible{border-bottom-color:var(--line-strong)}
+  footer .credit{margin-top:18px;color:var(--soft)}
+
+  /* ---------- 375 first-class ---------- */
+  @media (max-width:900px){
+    body{font-size:16px}
+    .mast{padding-top:14px;padding-bottom:12px}
+    /* on a phone: first photograph, then price and size, then the collar detail */
+    .product{display:flex;flex-direction:column;gap:26px;padding-top:16px}
+    .pinfo{position:static;order:1}
+    .plates{display:contents}
+    .plates figure:first-child{order:0}
+    .plates figure:last-child{order:2}
+    .wearrow{grid-template-columns:1fr;gap:26px}
+    .wearrow figure{max-width:440px}
+  }
+  @media (max-width:560px){
+    nav{gap:14px}
+    .pinfo h1{font-size:clamp(30px,8.6vw,38px)}
+    .sizes button{min-width:52px}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+    *{transition-duration:.01ms !important}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#info">Skip to the product</a>
+
+<header>
+  <div class="wrap mast">
+    <a class="name" href="../variant-a/">GOOSE BARNACLE</a>
+    <nav aria-label="Main">
+      <a href="../variant-a/">Home</a>
+      <a href="../catalogue/">Our Label</a>
+      <a href="../catalogue/#brands">In Store Brands</a>
+      <a href="../variant-a/#visit">Visit</a>
+      <a class="shop" href="../catalogue/">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <nav class="wrap crumb mono soft" aria-label="Breadcrumb">
+    <a href="../catalogue/">The Shop</a>
+    <span aria-hidden="true">/</span>
+    <a href="../catalogue/">Shirting</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">Blue Cotton Oxford</span>
+  </nav>
+
+  <section class="wrap product">
+    <div class="plates">
+      <figure>
+        <div class="ph"><img src="../images/oxford-blue.jpg" width="900" height="1350" alt="The blue cotton oxford, worn in the shop at 91 Atlantic Avenue" fetchpriority="high"></div>
+        <figcaption><span class="mono soft">Worn in the shop, 91 Atlantic</span><span class="mono soft">1/2</span></figcaption>
+      </figure>
+      <figure>
+        <div class="ph"><img src="../images/oxford-blue-2.jpg" width="900" height="1350" alt="Close detail of the oxford's hidden button down collar" loading="lazy"></div>
+        <figcaption><span class="mono soft">The hidden button down collar</span><span class="mono soft">2/2</span></figcaption>
+      </figure>
+    </div>
+
+    <div class="pinfo" id="info">
+      <p class="mono soft">GB Label · Shirting · No. 208</p>
+      <h1>GB Blue Cotton Oxford</h1>
+      <p class="priceline"><span class="mono soft">Price</span><span class="dots" aria-hidden="true"></span><span class="price">$168</span></p>
+
+      <ul class="bullets">
+        <li>Medium weight soft 100% cotton oxford cloth</li>
+        <li>Made and constructed in Portugal</li>
+        <li>Hidden button down collar</li>
+        <li>The perfect do everything, go everywhere shirt</li>
+        <li class="lo">Lo tiene todo "it has it all"</li>
+      </ul>
+
+      <div class="optrow">
+        <div class="lab"><span class="mono soft">Colour</span><span class="mono soft">4 cuts, one shirt</span></div>
+        <div class="colors">
+          <span class="here" aria-current="true">Blue</span>
+          <a href="https://www.goosebarnacle.com/product/gb-white-cotton-oxford/209" target="_blank" rel="noopener">White</a>
+          <a href="https://www.goosebarnacle.com/product/gb-navy-cotton-oxford/960" target="_blank" rel="noopener">Navy</a>
+          <a href="https://www.goosebarnacle.com/product/gb-blue-stripe-cotton-oxford/469" target="_blank" rel="noopener">Blue Stripe</a>
+        </div>
+      </div>
+
+      <div class="optrow">
+        <div class="lab"><span class="mono soft">Size</span><span class="mono soft" id="sizenote">Select a size</span></div>
+        <div class="sizes" role="group" aria-label="Choose a size">
+          <button type="button" aria-pressed="false">S</button>
+          <button type="button" aria-pressed="false">M</button>
+          <button type="button" aria-pressed="false">L</button>
+          <button type="button" aria-pressed="false">XL</button>
+          <button type="button" aria-pressed="false">XXL</button>
+        </div>
+      </div>
+
+      <div class="addrow">
+
+        <button class="add" id="add" type="button">Add to the bag · $168</button>
+        <p class="fulfil mono soft">Shipping, or pickup at the shop · 91 Atlantic Avenue</p>
+      </div>
+
+      <div class="floor">
+        <p class="mono soft" style="font-style:normal">From the shop floor</p>
+        <p>One shirt that does everything is most of what this shop believes in. This is that shirt. Wash it, wear it, repeat.</p>
+        <p class="who mono soft">Goose Barnacle, Brooklyn Heights</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="wear">
+    <div class="wrap">
+      <div class="rowhead">
+        <h2 class="mono">Wear it with</h2>
+        <a href="../catalogue/">Everything under the label</a>
+      </div>
+      <div class="wearrow">
+        <a href="https://www.goosebarnacle.com/product/gb-grey-italian-wool-tie/213" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/tie-grey.jpg" width="560" height="746" alt="The grey Italian wool tie draped over a wooden hanger" loading="lazy"></div>
+          <figcaption><span class="pname">Grey Italian Wool Tie</span><span class="dots" aria-hidden="true"></span><span class="pprice">$58</span></figcaption>
+        </figure></a>
+        <a href="https://www.goosebarnacle.com/product/gb-blue-italian-denim/194" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/denim-blue.jpg" width="560" height="746" alt="Blue Italian denim folded over a hanger against the pressed tin wall" loading="lazy"></div>
+          <figcaption><span class="pname">Blue Italian Denim</span><span class="dots" aria-hidden="true"></span><span class="pprice">$148</span></figcaption>
+        </figure></a>
+        <a href="https://www.goosebarnacle.com/product/gb-brown-club-jacket/1302" target="_blank" rel="noopener"><figure>
+          <div class="ph"><img src="../images/jacket-brown.jpg" width="560" height="840" alt="The brown club jacket, worn in the shop" loading="lazy"></div>
+          <figcaption><span class="pname">Brown Club Jacket</span><span class="dots" aria-hidden="true"></span><span class="pprice">$258</span></figcaption>
+        </figure></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img class="wordmark" src="../images/wordmark.png" width="720" height="317" alt="Goose Barnacle" loading="lazy">
+    <div class="fl mono soft">
+      <span>91 Atlantic Avenue, Brooklyn</span>
+      <span>·</span>
+      <a href="tel:+17188552694">(718) 855-2694</a>
+      <span>·</span>
+      <a href="https://www.instagram.com/goosebarnacle" target="_blank" rel="noopener">@goosebarnacle</a>
+    </div>
+    <p class="credit mono">A Brooklyn Heights Neighborhood Shop · Photography: Goose Barnacle</p>
+  </div>
+</footer>
+
+<script>
+  // Size row and Add button, visual only. No cart exists behind this concept.
+  (function(){
+    var sizes = document.querySelectorAll('.sizes button');
+    var note = document.getElementById('sizenote');
+    var add = document.getElementById('add');
+    var picked = null;
+    sizes.forEach(function(b){
+      b.addEventListener('click', function(){
+        sizes.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        picked = b.textContent;
+        note.textContent = 'Size ' + picked;
+        if(add.getAttribute('data-done')){
+          add.removeAttribute('data-done');
+          add.textContent = 'Add to the bag · $168';
+        }
+      });
+    });
+    add.addEventListener('click', function(){
+      if(add.getAttribute('data-done')) return;
+      if(!picked){ note.textContent = 'Pick a size first'; return; }
+      add.setAttribute('data-done','1');
+      add.textContent = 'In the bag · Size ' + picked;
+    });
+  })();
+</script>
+</body>
+</html>
